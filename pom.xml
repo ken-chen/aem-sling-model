@@ -20,7 +20,7 @@
     <artifactId>slingModel63</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <description>slingModel63</description>
+    <description>SlingModel63</description>
     
     <modules>
         <module>core</module>
@@ -132,6 +132,22 @@
         </plugins>
         <pluginManagement>
             <plugins>
+            <plugin>
+<groupId>org.apache.felix</groupId>
+<artifactId>maven-scr-plugin</artifactId>
+</plugin>
+<plugin>
+<groupId>org.apache.felix</groupId>
+<artifactId>maven-bundle-plugin</artifactId>
+<extensions>true</extensions>
+<configuration>
+<instructions>
+<Bundle-SymbolicName>SlingModel63-Core</Bundle-SymbolicName>
+<Sling-Model-Packages>SlingModel63.core</Sling-Model-Packages>
+</instructions>
+</configuration>
+</plugin>
+
                 <!-- Maven Clean Plugin -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -383,6 +399,25 @@
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
+        <dependency>
+              <groupId>com.adobe.aem</groupId>
+              <artifactId>uber-jar</artifactId>
+              <version>6.3.0</version>
+              <!-- for AEM6.1 use this version     : <version>6.1.0</version> -->
+              <!-- for AEM6.1 SP1 use this version : <version>6.1.0-SP1-B0001</version> -->
+              <!-- for AEM6.1 SP2 use this version : <version>6.1.0-SP2</version> -->
+              <!-- for AEM6.2 use this version     : <version>6.2.0</version> -->
+              <classifier>obfuscated-apis</classifier>
+              <scope>provided</scope>
+          </dependency>
+             
+          <dependency>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-atinject_1.0_spec</artifactId>
+              <version>1.0</version>
+              <scope>provided</scope>
+          </dependency>
+        
             <!-- OSGi Dependencies -->
             <dependency>
                 <groupId>org.apache.felix</groupId>
