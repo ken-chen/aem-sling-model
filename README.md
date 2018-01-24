@@ -2,6 +2,12 @@
 
 This is a project template for AEM-based applications. It is intended as a best-practice set of examples as well as a potential starting point to develop your own functionality.
 
+mvn archetype:generate -DarchetypeGroupId=com.adobe.granite.archetypes -DarchetypeArtifactId=aem-project-archetype -DarchetypeVersion=10 -DarchetypeRepository=https://repo.adobe.com/nexus/content/groups/public/
+
+https://helpx.adobe.com/experience-manager/using/aem63_slingmodel.html
+
+mvn -PautoInstallPackage install.
+
 ## Modules
 
 The main parts of the template are:
